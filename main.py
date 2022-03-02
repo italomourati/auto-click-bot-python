@@ -1,6 +1,7 @@
 from bombcrypto.main import play_hero_job, refresh_hero, open_trunk, play_bot_bomb
 from lunarush.main import launch_luna, select_boss_level_one, select_heros_one_two_three, select_heros_for_five_six, figth_boss, close_game, play_bot_luna, scroll_mouse_heros, select_heros_seven_eight_nine
 from spacecrypto.main import launch_space, fight_boss, close_space_game, play_bot_space
+from fishcrypto.main import play_bot_fish, launch_fish, play_rod_one_fish, play_rod_two_fish, play_rod_three_fish, play_friend_rod_fish, close_fish_game
 import os
 import time
 
@@ -61,6 +62,16 @@ def play_space_crypto():
   launch_space() # 2 minutos e 10 segundos
   fight_boss() # 2 minutos
 
+# FISH CRYPTO 9 minutos e 22 segundos
+def play_fish_crypto():
+  launch_fish() # 2 minutos
+  play_rod_one_fish() # 1 minuto
+  play_rod_two_fish() # 2 minuto
+  refresh_hero() # 12 segundos
+  play_rod_three_fish() # 3 minuto
+  play_friend_rod_fish() # 1 minuto
+  close_fish_game() # 10 segundos
+
 # NOT AFK BOMBCRYPTO 22 MINUTOS
 def not_afk_bomb():
   for item in range(5): 
@@ -71,6 +82,7 @@ def not_afk_bomb():
 
 # 1 HORA 30 MINUTO
 def stage_one():
+  play_fish_crypto() # 9 minutos e 22 segundos
   play_luna() # 23 MINUTOS e 34 segundos
   play_space_crypto() # 4 MINUTOS e 10 SEGUNDOS
   play_hero_job() # 1 MINUTOS e 6 SEGUNDOS
@@ -78,35 +90,26 @@ def stage_one():
   close_space_game(); # 10 SEGUNDOS
   not_afk_bomb() # 22 MINUTOS
   play_hero_job() # 1 MINUTOS e 6 SEGUNDOS
-  time.sleep(18) # 28 segundos
-  # 1h 13m
+  time.sleep(104) # 1 MUNITO e 44 segundos
+  # 1h 24m
   refresh_hero() # 12 segundos
   time.sleep(120) # 2 minutos
   open_trunk() # 12 segundos
   time.sleep(120) # 2 minutos
   refresh_hero() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_trunk() # 12 segundos
-  time.sleep(120) # 2 minutos
-  refresh_hero() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_trunk() # 12 segundos
-  time.sleep(120) # 2 minutos
-  refresh_hero() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_trunk() # 12 segundos
-  time.sleep(36) # 36 segundos
+  time.sleep(72) # 1 minutos 12 sgundos
 
 # 1 HORA 30 MINUTOS
 def stage_two():
-  play_space_crypto() # 4 MINUTOS e 10 SEGUNDOS
   play_hero_job() # 1 MINUTOS e 6 SEGUNDOS
+  play_space_crypto() # 4 MINUTOS e 10 SEGUNDOS
   not_afk_bomb() # 22 MINUTOS
   close_space_game(); # 10 SEGUNDOS
   not_afk_bomb() # 22 MINUTOS
   play_hero_job() # 1 MINUTOS e 6 SEGUNDOS
   not_afk_bomb() # 22 MINUTOS
   refresh_hero() # 12 segundos
+  # 1h 12m 44s
   time.sleep(120) # 2 minutos
   open_trunk() # 12 segundos
   time.sleep(84) # 1 minuto e 24 segundos
@@ -117,6 +120,7 @@ def stage_two():
   refresh_hero() # 12 segundos
   time.sleep(120) # 2 minutos
   open_trunk() # 12 segundos
+  # 10m 24s 
   time.sleep(120) # 2 minutos
   refresh_hero() # 12 segundos
   time.sleep(120) # 2 minutos
@@ -124,6 +128,35 @@ def stage_two():
   time.sleep(120) # 2 minutos
   refresh_hero() # 12 segundos
   time.sleep(16) # 16 segundos
+  # 6m 52s
+
+# 1 HORA 30 MINUTO
+def stage_three():
+  play_space_crypto() # 4 MINUTOS e 10 SEGUNDOS
+  play_luna() # 23 MINUTOS e 34 segundos
+  play_hero_job() # 1 MINUTOS e 6 SEGUNDOS
+  not_afk_bomb() # 22 MINUTOS
+  close_space_game(); # 10 SEGUNDOS
+  not_afk_bomb() # 22 MINUTOS
+  play_hero_job() # 1 MINUTOS e 6 SEGUNDOS
+  time.sleep(104) # 1 MUNITO e 44 segundos
+  # 1h 24m
+  refresh_hero() # 12 segundos
+  time.sleep(120) # 2 minutos
+  open_trunk() # 12 segundos
+  time.sleep(120) # 2 minutos
+  refresh_hero() # 12 segundos
+  time.sleep(84) # 1 minutos 24 sgundos
+  refresh_hero() # 12 segundos
+  time.sleep(120) # 2 minutos
+  open_trunk() # 12 segundos
+  time.sleep(120) # 2 minutos
+  refresh_hero() # 12 segundos
+  time.sleep(120) # 2 minutos
+  open_trunk() # 12 segundos
+  time.sleep(120) # 2 minutos
+  refresh_hero() # 12 segundos
+  time.sleep(10) # 10 segundos
 
 def main_menu():
   while True:
@@ -147,14 +180,28 @@ def main_menu():
       while True:
         play_bot_space() # 24 minutos e 20 segundos
 
+    if select == 4:
+      while True:
+        play_bot_fish() #
+
     if select == 5:
       while True:
         os.system('cls' if os.name == 'nt' else 'clear') # limpar console
         print('############### FASE 1 ###############')
         stage_one() # 1h 30m
+        os.system('cls' if os.name == 'nt' else 'clear') # limpar console
         print('############### FASE 2 ###############')
         stage_two() # 1h 30m
+        os.system('cls' if os.name == 'nt' else 'clear') # limpar console
         print('############### FASE 3 ###############')
         stage_two() # 1h 30m
-        print('############### RESETAR FASES ###############')
+        os.system('cls' if os.name == 'nt' else 'clear') # limpar console
+        print('############### FASE 4 ###############')
+        stage_three() # 1h 30m
+        os.system('cls' if os.name == 'nt' else 'clear') # limpar console
+        print('############### FASE 5 ###############')
+        stage_two() # 1h 30m
+        os.system('cls' if os.name == 'nt' else 'clear') # limpar console
+        print('############### FASE 6 ###############')
+        stage_two() # 1h 30m
 main_menu()
