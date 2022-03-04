@@ -1,9 +1,11 @@
-from bombcrypto.main import play_heros, refresh_heros, open_and_close_trunk, play_bot_bomb
-from lunarush.main import launch_luna, select_boss_level_one, select_heros_one_two_three, select_heros_for_five_six, figth_boss, close_game, play_bot_luna, scroll_mouse_heros, select_heros_seven_eight_nine
-from spacecrypto._main import launch_space, fight_boss, close_space_game, play_bot_space
-from fishcrypto.main import play_bot_fish, launch_fish, play_rod_one_fish, play_rod_two_fish, play_rod_three_fish, play_friend_rod_fish, close_fish_game
+from bombcrypto.main import play_heros, refresh_heros, open_and_close_trunk, play_bot_bomb, connect_bomb
+from lunarush.main import launch_luna_rush, select_boss_level, select_group_one, select_group_two, select_group_three, deselect_group_one, deselect_group_two, deselect_group_three, figth_boss, close_luna_game, play_bot_luna, expand_tab_warriors
+from spacecrypto.main import launch_space_crypto, close_space_game, play_ship_space, play_bot_space
+from fishcrypto.main import play_bot_fish, launch_fish_crypto, pick_rod_player, pick_rod_friend, close_fish_game
 import os
-import time
+from pydoc import importfile
+
+time_print = importfile('./modules/timeprint.py')
 
 menu_options = {
   1: 'Executar bot BombCrypto',
@@ -18,145 +20,132 @@ def print_menu():
   for key in menu_options:
     print(key, '-', menu_options[key])
 
-# LUNA 23 MINUTOS  34 segundos
-def play_luna(): 
-  launch_luna() # 2 minutos
-  select_boss_level_one() # 20 segundos
-  select_heros_one_two_three() # 30 segundos
-  scroll_mouse_heros(True) # 12 seggundos
-  select_heros_seven_eight_nine() # 30 segundos
-  refresh_heros() # 12 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  select_boss_level_one() # 20 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  select_boss_level_one() # 20 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  refresh_heros() # 12 segundos
-  select_boss_level_one() # 20 segundos
-  scroll_mouse_heros(True) # 12 seggundos
-  select_heros_seven_eight_nine() # 30 segundos
-  scroll_mouse_heros(False) # 12 seggundos
-  select_heros_for_five_six() # 30 segundos
-  refresh_heros() # 12 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  select_boss_level_one() # 20 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  select_boss_level_one() # 20 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  refresh_heros() # 12 segundos
-  select_boss_level_one() # 20 segundos
-  select_heros_for_five_six() # 30 segundos
-  select_heros_one_two_three() # 30 segundos
-  refresh_heros() # 12 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  select_boss_level_one() # 20 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  select_boss_level_one() # 20 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  select_boss_level_one() # 20 segundos
-  close_game() # 20 segundos
-  refresh_heros() # 12 segundos
+# LUNA RUSH
+def play_luna(): # 29m 18s
+  launch_luna_rush() # 2m 7s
+  refresh_heros() # 22s
+  select_boss_level() # 12s
+  expand_tab_warriors() # 12s
+  deselect_group_one() # 36s
+  select_group_three() # 36s
+  for figth in range(3): # 6m 18s
+    figth_boss() 
+    select_boss_level()
+    refresh_heros() # 22s
+  expand_tab_warriors() # 12s
+  deselect_group_three() # 36s
+  select_group_two() # 36s
+  for figth in range(3): # 6m 18s
+    figth_boss() 
+    select_boss_level()
+    refresh_heros() # 22s 
+  expand_tab_warriors() # 12s
+  deselect_group_two() # 36s
+  select_group_one() # 36s
+  for figth in range(3): # 6m 18s
+    figth_boss() 
+    select_boss_level()
+    refresh_heros() # 22s
+  close_luna_game() # 13s
 
-# SPACECRYPTO 4 MINUTOS E 10 SEGUNDOS
-def play_space_crypto():
-  launch_space() # 2 minutos e 10 segundos
-  fight_boss() # 2 minutos
+# SPACECRYPTO 
+def play_space_crypto(): # 3m 24s
+  launch_space_crypto() # 2m 8s
+  play_ship_space() # 1m 16s
 
-# FISH CRYPTO 9 minutos e 22 segundos
-def play_fish_crypto():
-  launch_fish() # 2 minutos
-  play_rod_one_fish() # 1 minuto
-  play_rod_two_fish() # 2 minuto
-  refresh_heros() # 12 segundos
-  play_rod_three_fish() # 3 minuto
-  play_friend_rod_fish() # 1 minuto
-  close_fish_game() # 10 segundos
+# FISH CRYPTO 
+def play_fish_crypto(): # 4m 45s 
+  launch_fish_crypto() # 1m 31s
+  pick_rod_player() # 2m 3s
+  pick_rod_friend() # 58s
+  close_fish_game() # 13s
 
-# NOT AFK BOMBCRYPTO 22 MINUTOS
-def not_afk_bomb():
-  for item in range(5): 
-    refresh_heros() # 12 segundos
-    time.sleep(120) # 2 minutos
-    open_and_close_trunk() # 12 segundos
-    time.sleep(120) # 2 minutos
+# NOT AFK BOMBCRYPTO 
+def not_afk_bomb(): # 28m
+  for item in range(4): # 7m
+    refresh_heros() # 22s
+    time_print(120) # 2m
+    open_and_close_trunk() # 22s
+    time_print(120) # 2m
+    connect_bomb() # 1m 45s
+    time_print(31) # 31s
 
-# 1 HORA 30 MINUTO
-def stage_one():
-  play_fish_crypto() # 9 minutos e 22 segundos
-  play_luna() # 23 MINUTOS e 34 segundos
-  play_space_crypto() # 4 MINUTOS e 10 SEGUNDOS
-  play_heros() # 1 MINUTOS e 6 SEGUNDOS
-  not_afk_bomb() # 22 MINUTOS
-  close_space_game(); # 10 SEGUNDOS
-  not_afk_bomb() # 22 MINUTOS
-  play_heros() # 1 MINUTOS e 6 SEGUNDOS
-  time.sleep(104) # 1 MUNITO e 44 segundos
-  # 1h 24m
-  refresh_heros() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_and_close_trunk() # 12 segundos
-  time.sleep(120) # 2 minutos
-  refresh_heros() # 12 segundos
-  time.sleep(72) # 1 minutos 12 sgundos
+def stage_one(): # 1h 30m
+  refresh_heros() # 22s
+  play_fish_crypto() # 4m 45s
+  refresh_heros() # 22s
+  play_luna() # 29m 18s
+  play_space_crypto() # 3m 24s
+  play_heros() # 1m 5s
+  not_afk_bomb() #28m
+  close_space_game() # 13s
+  play_heros() # 1m 5s
+  refresh_heros() # 22s
+  time_print(120) # 2m
+  open_and_close_trunk() # 22s
+  time_print(120) # 2m
+  connect_bomb() # 1m 45s
+  time_print(31) # 31s
+  refresh_heros() # 22s
+  time_print(120) # 2m
+  open_and_close_trunk() # 22s
+  time_print(120) # 2m
+  connect_bomb() # 1m 45s
+  time_print(31) # 31s
+  refresh_heros() # 22s
+  time_print(120) # 2m
+  open_and_close_trunk() # 22s
+  time_print(120) # 2m
+  connect_bomb() # 1m 45s
+  time_print(31) # 31s
+  refresh_heros() # 22s
+  time_print(46) # 46s
 
-# 1 HORA 30 MINUTOS
-def stage_two():
-  play_heros() # 1 MINUTOS e 6 SEGUNDOS
-  play_space_crypto() # 4 MINUTOS e 10 SEGUNDOS
-  not_afk_bomb() # 22 MINUTOS
-  close_space_game(); # 10 SEGUNDOS
-  not_afk_bomb() # 22 MINUTOS
-  play_heros() # 1 MINUTOS e 6 SEGUNDOS
-  not_afk_bomb() # 22 MINUTOS
-  refresh_heros() # 12 segundos
-  # 1h 12m 44s
-  time.sleep(120) # 2 minutos
-  open_and_close_trunk() # 12 segundos
-  time.sleep(84) # 1 minuto e 24 segundos
-  refresh_heros() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_and_close_trunk() # 12 segundos
-  time.sleep(120) # 2 minutos
-  refresh_heros() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_and_close_trunk() # 12 segundos
-  # 10m 24s 
-  time.sleep(120) # 2 minutos
-  refresh_heros() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_and_close_trunk() # 12 segundos
-  time.sleep(120) # 2 minutos
-  refresh_heros() # 12 segundos
-  time.sleep(16) # 16 segundos
-  # 6m 52s
+def stage_two(): # 1h 30m
+  play_heros() # 1m 5s
+  not_afk_bomb() # 28m
+  play_space_crypto() # 3m 24s
+  play_heros() # 1m 5s
+  not_afk_bomb() #28m
+  close_space_game() # 13s
+  play_heros() # 1m 5s
+  not_afk_bomb() #28m
+  play_heros() # 1m 5s
 
-# 1 HORA 30 MINUTO
-def stage_three():
-  play_space_crypto() # 4 MINUTOS e 10 SEGUNDOS
-  play_luna() # 23 MINUTOS e 34 segundos
-  play_heros() # 1 MINUTOS e 6 SEGUNDOS
-  not_afk_bomb() # 22 MINUTOS
-  close_space_game(); # 10 SEGUNDOS
-  not_afk_bomb() # 22 MINUTOS
-  play_heros() # 1 MINUTOS e 6 SEGUNDOS
-  time.sleep(104) # 1 MUNITO e 44 segundos
-  # 1h 24m
-  refresh_heros() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_and_close_trunk() # 12 segundos
-  time.sleep(120) # 2 minutos
-  refresh_heros() # 12 segundos
-  time.sleep(84) # 1 minutos 24 sgundos
-  refresh_heros() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_and_close_trunk() # 12 segundos
-  time.sleep(120) # 2 minutos
-  refresh_heros() # 12 segundos
-  time.sleep(120) # 2 minutos
-  open_and_close_trunk() # 12 segundos
-  time.sleep(120) # 2 minutos
-  refresh_heros() # 12 segundos
-  time.sleep(10) # 10 segundos
+def stage_three(): # 1h 30m
+  refresh_heros() # 22s
+  time_print(120) # 2m
+  open_and_close_trunk() # 22s
+  time_print(120) # 2m
+  refresh_heros() # 22s
+  time_print(1) # 1s
+  refresh_heros() # 22s
+  play_luna() # 29m 18s
+  play_space_crypto() # 3m 24s
+  play_heros() # 1m 5s
+  not_afk_bomb() #28m
+  close_space_game() # 13s
+  play_heros() # 1m 5s
+  refresh_heros() # 22s
+  time_print(120) # 2m
+  open_and_close_trunk() # 22s
+  time_print(120) # 2m
+  connect_bomb() # 1m 45s
+  time_print(31) # 31s
+  refresh_heros() # 22s
+  time_print(120) # 2m
+  open_and_close_trunk() # 22s
+  time_print(120) # 2m
+  connect_bomb() # 1m 45s
+  time_print(31) # 31s
+  refresh_heros() # 22s
+  time_print(120) # 2m
+  open_and_close_trunk() # 22s
+  time_print(120) # 2m
+  connect_bomb() # 1m 45s
+  time_print(31) # 31s
+  refresh_heros() # 22s
+  time_print(46) # 46s
 
 def main_menu():
   while True:
@@ -170,15 +159,15 @@ def main_menu():
 
     if select == 1:
       while True:
-        play_bot_bomb() # 47 minutos e 6 segundo
+        play_bot_bomb() # 
     
     if select == 2:
       while True:
-        play_bot_luna() # 4 horas 42 minutos e 40 segundos
+        play_bot_luna() # 
 
     if select == 3:
       while True:
-        play_bot_space() # 24 minutos e 20 segundos
+        play_bot_space() #
 
     if select == 4:
       while True:

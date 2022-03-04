@@ -1,179 +1,134 @@
+from pydoc import importfile
+from re import T
 import pyautogui
-import sys
 import time
 from datetime import datetime
+from colorama import init, Fore, Style
 
-from lunarush.account import account
+init(convert=True)
 
-accountOne = account(
-  name='LunaRush - Conta 1',
-  launchButton=[1200,1000],
-  loginMetaMaskButton=[1415,890],
-  signMetaMaskButton=[1605,980],
-  bossMenuButton=[1085,800],
-  boss1Button=[1240,760],
-  boss2Button=[1295,905],
-  boss3Button=[1412,760],
-  hero1SlotButton=[1000,745],
-  hero2SlotButton=[1065,745],
-  hero3SlotButton=[1000,835],
-  hero4SlotButton=[1065,835],
-  hero5SlotButton=[1000,920],
-  hero6SlotButton=[1065,920],
-  hero7SlotButton=[1000,835],
-  hero8SlotButton=[1065,835],
-  hero9SlotButton=[1000,920],
-  hunterBossButton=[1510,955],
-  startFightBossClick=[1260,830],
-  collectRewardButton=[1275,945],
-  newTabChromeButton=[1125,553],
-  closeTabChromeButton=[1088,551],
-)
+image_click = importfile('./modules/imageclick.py')
 
-accounts = [accountOne]
+WAIT_TIME_LAUNCH = 50
+WAIT_TIME_WALLET = 20
+WAIT_HUNTING_BOSS = 5
+WAIT_START_BOSS = 10
+WAIT_FIGTH_BOSS = 50
 
-def launch_luna_rush_single(name, launchButton, loginMetaMaskButton, signMetaMaskButton, bossMenuButton):
-  pyautogui.moveTo(launchButton[0], launchButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Launch Button Press [OK]'%(name))
-  time.sleep(60)
-  pyautogui.moveTo(loginMetaMaskButton[0], loginMetaMaskButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Login MetaMask Button Press [OK]'%(name))
-  time.sleep(15)
-  pyautogui.moveTo(signMetaMaskButton[0], signMetaMaskButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Sign MetaMask Button Press [OK]'%(name))
-  time.sleep(45)
-  pyautogui.moveTo(bossMenuButton[0], bossMenuButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Boss Menu Button Press [OK]'%(name))
-  time.sleep(5)
+ICON_LUNA_BTS = './lunarush/assets/icon_luna_bt.PNG'
+CONNECT_WALLET_BTS = './lunarush/assets/connect_meta_mask_bt.PNG'
+SIGN_META_MASK_BTS = './lunarush/assets/sign_meta_mask_bt.PNG'
+HUNTING_BOSS_BTS = './lunarush/assets/hunting_boss_bt.PNG'
+LEVEL_BOSS_SELECT_BTS = './lunarush/assets/level_boss_bt.PNG'
+EXPAND_WARRIORS_BTS = './lunarush/assets/expand_warriors_bt.PNG'
+WARRIOR_1_BTS = './lunarush/assets/warrior_1_bt.PNG'
+WARRIOR_2_BTS = './lunarush/assets/warrior_2_bt.PNG'
+WARRIOR_3_BTS = './lunarush/assets/warrior_3_bt.PNG'
+WARRIOR_4_BTS = './lunarush/assets/warrior_4_bt.PNG'
+WARRIOR_5_BTS = './lunarush/assets/warrior_5_bt.PNG'
+WARRIOR_6_BTS = './lunarush/assets/warrior_6_bt.PNG'
+WARRIOR_7_BTS = './lunarush/assets/warrior_7_bt.PNG'
+WARRIOR_8_BTS = './lunarush/assets/warrior_8_bt.PNG'
+WARRIOR_9_BTS = './lunarush/assets/warrior_9_bt.PNG'
+WARRIOR_1_SELECT_BTS = './lunarush/assets/warrior_1_select_bt.PNG'
+WARRIOR_2_SELECT_BTS = './lunarush/assets/warrior_2_select_bt.PNG'
+WARRIOR_3_SELECT_BTS = './lunarush/assets/warrior_3_select_bt.PNG'
+WARRIOR_4_SELECT_BTS = './lunarush/assets/warrior_4_select_bt.PNG'
+WARRIOR_5_SELECT_BTS = './lunarush/assets/warrior_5_select_bt.PNG'
+WARRIOR_6_SELECT_BTS = './lunarush/assets/warrior_6_select_bt.PNG'
+WARRIOR_7_SELECT_BTS = './lunarush/assets/warrior_7_select_bt.PNG'
+WARRIOR_8_SELECT_BTS = './lunarush/assets/warrior_8_select_bt.PNG'
+WARRIOR_9_SELECT_BTS = './lunarush/assets/warrior_9_select_bt.PNG'
+START_BOSS_BTS = './lunarush/assets/start_boss_bt.PNG'
+START_FIGTH_BTS = './lunarush/assets/start_figth_bt.PNG'
+RESULT_FIGTH_BTS = './lunarush/assets/result_figth_bt.PNG'
+COLLECT_REWERS_BTS = './lunarush/assets/collect_rewers_bt.PNG'
+RESULT_FIGTH_VICTORY_BTS = './lunarush/assets/result_figth_victory_bt.PNG'
+ICONE_TAB_BTS = './lunarush/assets/icone_tab_bt.PNG'
 
-def launch_luna():
-  for account in accounts:
-    launch_luna_rush_single(account.name, account.launchButton, account.loginMetaMaskButton, account.signMetaMaskButton, account.bossMenuButton)
+def launch_luna_rush(): # 2m 7s
+  image_click('Icon Luna', ICON_LUNA_BTS, WAIT_TIME_LAUNCH) #1m 1s
+  image_click('Connect Wallet', CONNECT_WALLET_BTS, WAIT_TIME_WALLET) # 27s
+  image_click('Sign Meta Mask', SIGN_META_MASK_BTS, WAIT_TIME_WALLET) # 27s
+  image_click('Hunting Boss', HUNTING_BOSS_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def select_boss_level_one_single(name, boss1Button, boss2Button, boss3Button):
-  pyautogui.moveTo(boss1Button[0], boss1Button[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Boss Level 1 Button Press [OK]'%(name))
-  time.sleep(5)
-  pyautogui.moveTo(boss2Button[0], boss2Button[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Boss Level 2 Button Press [OK]'%(name))
-  time.sleep(5)
-  pyautogui.moveTo(boss3Button[0], boss3Button[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Boss Level 3 Button Press [OK]'%(name))
-  time.sleep(5)
+def select_boss_level(): # 12s
+  image_click('Select Level Boss', LEVEL_BOSS_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def select_boss_level_one():
-  for account in accounts:
-    select_boss_level_one_single(account.name, account.boss1Button, account.boss2Button, account.boss3Button)
+def select_group_one(): # 36s
+  image_click('Warrior 1 Select', WARRIOR_1_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 2 Select', WARRIOR_2_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 3 Select', WARRIOR_3_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def select_heros_single(name, hero1, hero2, hero3):
-  pyautogui.moveTo(hero1[0], hero1[1], 1)
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Hero 1 ou 4 Select Button Press [OK]'%(name))
-  time.sleep(10)
-  pyautogui.moveTo(hero2[0], hero2[1], 1)
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Hero 2 ou 5 Select Button Press [OK]'%(name))
-  time.sleep(10)
-  pyautogui.moveTo(hero3[0], hero3[1], 1)
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Hero 3 ou 6 Select Button Press [OK]'%(name))
-  time.sleep(10)
+def select_group_two(): # 36s
+  image_click('Warrior 4 Select', WARRIOR_4_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 5 Select', WARRIOR_5_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 6 Select', WARRIOR_6_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def select_heros_one_two_three():
-  for account in accounts:
-    select_heros_single(account.name, account.hero1SlotButton, account.hero2SlotButton, account.hero3SlotButton)
+def select_group_three(): # 36s
+  image_click('Warrior 7 Select', WARRIOR_7_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 8 Select', WARRIOR_8_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 9 Select', WARRIOR_9_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def select_heros_for_five_six():
-  for account in accounts:
-    select_heros_single(account.name, account.hero4SlotButton, account.hero5SlotButton, account.hero6SlotButton)
+def deselect_group_one(): # 36s
+  image_click('Warrior 1 Deselect', WARRIOR_1_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 2 Deselect', WARRIOR_2_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 3 Deselect', WARRIOR_3_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def select_heros_seven_eight_nine():
-  for account in accounts:
-    select_heros_single(account.name, account.hero7SlotButton, account.hero8SlotButton, account.hero9SlotButton)
+def deselect_group_two(): # 36s
+  image_click('Warrior 4 Deselect', WARRIOR_4_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 5 Deselect', WARRIOR_5_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 6 Deselect', WARRIOR_6_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def figth_boss_single(name, hunterBossButton, startFightBossClick, collectRewardButton):
-  pyautogui.moveTo(hunterBossButton[0], hunterBossButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Hunter Boss Button Press [OK]'%(name))
-  time.sleep(10)
-  pyautogui.moveTo(startFightBossClick[0], startFightBossClick[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Start Fight Button Press [OK]'%(name))
-  time.sleep(60)
-  pyautogui.moveTo(collectRewardButton[0], collectRewardButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Collect Reward Button Press [OK]'%(name))
-  time.sleep(10)
-  pyautogui.moveTo(collectRewardButton[0], collectRewardButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Collect Reward Button Press [OK]'%(name))
-  time.sleep(10)
+def deselect_group_three(): # 36s
+  image_click('Warrior 7 Deselect', WARRIOR_7_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 8 Deselect', WARRIOR_8_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior 9 Deselect', WARRIOR_9_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def figth_boss():
-  for account in accounts:
-    figth_boss_single(account.name, account.hunterBossButton, account.startFightBossClick, account.collectRewardButton)
+def figth_boss(): # 1m 54s
+  image_click('Start Boss', START_BOSS_BTS, WAIT_START_BOSS) # 17s
+  image_click('Start Figth', START_FIGTH_BTS, WAIT_FIGTH_BOSS) # 1m 1s
+  image_click('Lose Figth', RESULT_FIGTH_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Collect Rewers', COLLECT_REWERS_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_click('Victory Figth', RESULT_FIGTH_VICTORY_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def close_game_single(name, newTabChromeButton, closeTabChromeButton):
-  pyautogui.moveTo(newTabChromeButton[0], newTabChromeButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] New Tab Chrome Button Press [OK]'%(name))
-  time.sleep(10)
-  pyautogui.moveTo(closeTabChromeButton[0], closeTabChromeButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Close Tab Chrome Button Press [OK]'%(name))
-  time.sleep(10)
+def close_luna_game(): # 13s
+  image_click('Icon Tab', ICONE_TAB_BTS) # 7s
+  time.sleep(2)
+  pyautogui.keyDown('ctrl')
+  pyautogui.press('t')
+  pyautogui.keyUp('ctrl')
+  time.sleep(2)
+  pyautogui.keyDown('ctrl')
+  pyautogui.press('1')
+  pyautogui.keyUp('ctrl')
+  time.sleep(2)
+  pyautogui.keyDown('ctrl')
+  pyautogui.press('w')
+  pyautogui.keyUp('ctrl')
 
-def close_game():
-  for account in accounts:
-    close_game_single(account.name, account.newTabChromeButton, account.closeTabChromeButton)
+def expand_tab_warriors(): # 12s
+  image_click('Expand Warriors', EXPAND_WARRIORS_BTS, WAIT_HUNTING_BOSS) # 12s
 
-def scroll_mouse_heros_single(name, mode):
-  if mode:
-    pyautogui.moveTo(1030,875)
-    pyautogui.mouseDown(button='left')
-    pyautogui.moveTo(1030,690,1)
-    pyautogui.mouseUp(button='left')
-    print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Scroll Last Heros [OK]'%(name))
-    time.sleep(10)
-  else :
-    pyautogui.moveTo(1030,690)
-    pyautogui.mouseDown(button='left')
-    pyautogui.moveTo(1030,875,1)
-    pyautogui.mouseUp(button='left')
-    print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Scroll First Heros [OK]'%(name))
-    time.sleep(10)
-
-def scroll_mouse_heros(mode):
-  for account in accounts:
-    scroll_mouse_heros_single(account.name, mode)
-
-
-def play_bot_luna(): # 4 horas 49 minutos e 56 segundos
-  launch_luna() # 2 minutos
-  select_boss_level_one() # 20 segundos
-  select_heros_one_two_three() # 30 segundos
-  scroll_mouse_heros(True) # 12 seggundos
-  select_heros_seven_eight_nine() # 30 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  select_heros_seven_eight_nine() # 30 segundos
-  scroll_mouse_heros(False) # 12 seggundos
-  select_heros_for_five_six() # 30 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  select_heros_for_five_six() # 30 segundos
-  select_heros_one_two_three() # 30 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  figth_boss() # 1 minuto e 30 segundos
-  close_game() # 20 segundos
-  time.sleep(16200); # 4 horas e 30 minutos
+def play_bot_luna():
+  launch_luna_rush()
+  select_boss_level()
+  expand_tab_warriors()
+  deselect_group_one()
+  select_group_three()
+  for figth in range(3):
+    figth_boss()
+    select_boss_level()
+  expand_tab_warriors()
+  deselect_group_three()
+  select_group_two()
+  for figth in range(3):
+    figth_boss()
+    select_boss_level()
+  expand_tab_warriors()
+  deselect_group_two()
+  select_group_one()
+  for figth in range(3):
+    figth_boss()
+    select_boss_level()
+  close_luna_game()

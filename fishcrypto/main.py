@@ -1,113 +1,69 @@
-import pyautogui
-import sys
 import time
-from datetime import datetime
+from pydoc import importfile
+import pyautogui
 
-from fishcrypto.account import account
+image_click = importfile('./modules/imageclick.py')
+time_print = importfile('./modules/timeprint.py')
 
-accountOne = account(
-  name='FishCrypto - Conta 1',
-  launchButton=[360,1000],
-  loginMetaMaskButton=[430,955],
-  signMetaMaskButton=[760,985],
-  rod1tButton=[240,955],
-  rod2tButton=[450,970],
-  rod3tButton=[625,940],
-  rodFriend1tButton=[772,872],
-  selectFristRodButton=[710,655],
-  pickRodButton=[600,1020],
-  friendListButton=[750,651],
-  rodFrientSelectButton=[545,650],
-  newTabChromeButton=[274,554],
-  closeTabChromeButton=[236,553],
-)
+WAIT_TIME_LAUNCH = 50
+WAIT_TIME_WALLET = 10
+WAIT_TIME_ROD = 5
+WAIT_TIME_CLOSE_GAME = 900 # 15m
 
-accounts = [accountOne]
+CONNECT_WALLET_BTS = './fishcrypto/assets/connect_wallet_bt.PNG'
+ICON_FISH_BTS = './fishcrypto/assets/icon_fish_bt.PNG'
+SIGN_META_MASK_BTS = './fishcrypto/assets/sign_meta_mask_bt.PNG'
+ADD_ROD_1_BTS = './fishcrypto/assets/add_rod_1_bt.PNG'
+ADD_ROD_2_BTS = './fishcrypto/assets/add_rod_2_bt.PNG'
+ADD_ROD_3_BTS = './fishcrypto/assets/add_rod_3_bt.PNG'
+ROD_1_BTS = './fishcrypto/assets/rod_1_bt.PNG'
+ROD_2_BTS = './fishcrypto/assets/rod_2_bt.PNG'
+ROD_3_BTS = './fishcrypto/assets/rod_3_bt.PNG'
+PICK_ROD_BTS = './fishcrypto/assets/pick_rod_bt.PNG'
+ADD_FRIEND_ROD_1_BTS = './fishcrypto/assets/add_friend_rod_1_bt.PNG'
+FRIEND_1_BTS = './fishcrypto/assets/friend_1_bt.PNG'
+ROD_FRIEND_1_BTS = './fishcrypto/assets/rod_friend_1_bt.PNG'
+ICON_TAB_BTS = './fishcrypto/assets/icon_tab_bt.PNG'
 
-def launch_fish_crypto_single(name, launchButton, loginMetaMaskButton, signMetaMaskButton):
-  pyautogui.moveTo(launchButton[0], launchButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Launch Button Press [OK]'%(name))
-  time.sleep(60)
-  pyautogui.moveTo(loginMetaMaskButton[0], loginMetaMaskButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Login MetaMask Button Press [OK]'%(name))
-  time.sleep(15)
-  pyautogui.moveTo(signMetaMaskButton[0], signMetaMaskButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Sign MetaMask Button Press [OK]'%(name))
-  time.sleep(45)
+def launch_fish_crypto(): # 1m 31s
+  image_click('Icon Fish', ICON_FISH_BTS, WAIT_TIME_LAUNCH) # 57s
+  image_click('Connect Wallet', CONNECT_WALLET_BTS, WAIT_TIME_WALLET) # 17s
+  image_click('Sign Meta Mask', SIGN_META_MASK_BTS, WAIT_TIME_WALLET) # 17s
 
-def launch_fish():
-  for account in accounts:
-    launch_fish_crypto_single(account.name, account.launchButton, account.loginMetaMaskButton, account.signMetaMaskButton)
+def pick_rod_player(): # 2m 3s
+  image_click('Add Rod 1', ADD_ROD_1_BTS, WAIT_TIME_WALLET) # 17s
+  image_click('Select Rod 1', ROD_1_BTS, WAIT_TIME_ROD) # 12s
+  image_click('Pick Rod', PICK_ROD_BTS, WAIT_TIME_ROD) # 12s
+  image_click('Add Rod 2', ADD_ROD_2_BTS, WAIT_TIME_WALLET) # 17s
+  image_click('Select Rod 2', ROD_2_BTS, WAIT_TIME_ROD) # 12s
+  image_click('Pick Rod', PICK_ROD_BTS, WAIT_TIME_ROD) # 12s
+  image_click('Add Rod 3', ADD_ROD_3_BTS, WAIT_TIME_WALLET) # 17s
+  image_click('Select Rod 3', ROD_3_BTS, WAIT_TIME_ROD) # 12s
+  image_click('Pick Rod', PICK_ROD_BTS, WAIT_TIME_ROD) # 12s
 
-def play_rod_fish(name, rodButton, selectFristRodButton, pickRodButton):
-  pyautogui.moveTo(rodButton[0], rodButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Rod Button Press [OK]'%(name))
-  time.sleep(20)
-  pyautogui.moveTo(selectFristRodButton[0], selectFristRodButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Select First Button Press [OK]'%(name))
-  time.sleep(10)
-  pyautogui.moveTo(pickRodButton[0], pickRodButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Pick Rod Button Press [OK]'%(name))
-  time.sleep(30)
+def pick_rod_friend(): # 58s
+  image_click('Add Friend Rod 1', ADD_FRIEND_ROD_1_BTS, WAIT_TIME_WALLET) # 17s
+  image_click('Select Friend 1', FRIEND_1_BTS, WAIT_TIME_WALLET) # 17s
+  image_click('Select Rod 1', ROD_FRIEND_1_BTS, WAIT_TIME_ROD) # 12s
+  image_click('Pick Rod', PICK_ROD_BTS, WAIT_TIME_ROD) # 12s
 
-def play_rod_one_fish():
-  for account in accounts:
-    play_rod_fish(account.name, account.rod1tButton, account.selectFristRodButton, account.pickRodButton)
+def close_fish_game(): # 13s
+  image_click('Icon Tab', ICON_TAB_BTS)
+  time.sleep(2)
+  pyautogui.keyDown('ctrl')
+  pyautogui.press('t')
+  pyautogui.keyUp('ctrl')
+  time.sleep(2)
+  pyautogui.keyDown('ctrl')
+  pyautogui.press('1')
+  pyautogui.keyUp('ctrl')
+  time.sleep(2)
+  pyautogui.keyDown('ctrl')
+  pyautogui.press('w')
+  pyautogui.keyUp('ctrl')
 
-def play_rod_two_fish():
-  for account in accounts:
-    play_rod_fish(account.name, account.rod2tButton, account.selectFristRodButton, account.pickRodButton)
-
-def play_rod_three_fish():
-  for account in accounts:
-    play_rod_fish(account.name, account.rod3tButton, account.selectFristRodButton, account.pickRodButton)
-
-def play_friend_rod_fish_single(name, rodFriendButton, friendListButton, rodFrientSelectButton, pickRodButton):
-  pyautogui.moveTo(rodFriendButton[0], rodFriendButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Rod Button Press [OK]'%(name))
-  time.sleep(20)
-  pyautogui.moveTo(friendListButton[0], friendListButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Select Friend Button Press [OK]'%(name))
-  time.sleep(10)
-  pyautogui.moveTo(rodFrientSelectButton[0], rodFrientSelectButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Select Rod Button Press [OK]'%(name))
-  time.sleep(15)
-  pyautogui.moveTo(pickRodButton[0], pickRodButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Pick Rod Button Press [OK]'%(name))
-  time.sleep(15)
-
-def play_friend_rod_fish():
-  for account in accounts:
-    play_friend_rod_fish_single(account.name, account.rodFriend1tButton, account.friendListButton, account.rodFrientSelectButton, account.pickRodButton)
-
-def close_game_single(name, newTabChromeButton, closeTabChromeButton):
-  pyautogui.moveTo(newTabChromeButton[0], newTabChromeButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] New Tab Chrome Button Press [OK]'%(name))
-  time.sleep(5)
-  pyautogui.moveTo(closeTabChromeButton[0], closeTabChromeButton[1])
-  pyautogui.click()
-  print(datetime.now().strftime('%d/%m %H:%M:%S'),'[%s] Close Tab Chrome Button Press [OK]'%(name))
-  time.sleep(5)
-
-def close_fish_game():
-  for account in accounts:
-    close_game_single(account.name, account.newTabChromeButton, account.closeTabChromeButton)
-
-def play_bot_fish(): #  9 minutos e 10 segundos
-  launch_fish() # 2 minutos
-  play_rod_one_fish() # 1 minuto
-  play_rod_two_fish() # 2 minuto
-  play_rod_three_fish() # 3 minuto
-  play_friend_rod_fish() # 1 minuto
-  close_fish_game() # 10 segundos
+def play_bot_fish():
+  launch_fish_crypto()
+  pick_rod_player()
+  pick_rod_friend()
+  close_fish_game()
