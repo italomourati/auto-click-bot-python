@@ -8,6 +8,7 @@ from colorama import init, Fore, Style
 init(convert=True)
 
 image_click = importfile('./modules/imageclick.py')
+image_one_click = importfile('./modules/imageoneclick.py')
 
 WAIT_TIME_LAUNCH = 50
 WAIT_TIME_WALLET = 20
@@ -30,6 +31,9 @@ WARRIOR_6_BTS = './lunarush/assets/warrior_6_bt.PNG'
 WARRIOR_7_BTS = './lunarush/assets/warrior_7_bt.PNG'
 WARRIOR_8_BTS = './lunarush/assets/warrior_8_bt.PNG'
 WARRIOR_9_BTS = './lunarush/assets/warrior_9_bt.PNG'
+WARRIOR_10_BTS = './lunarush/assets/warrior_10_bt.PNG'
+WARRIOR_11_BTS = './lunarush/assets/warrior_11_bt.PNG'
+WARRIOR_12_BTS = './lunarush/assets/warrior_12_bt.PNG'
 WARRIOR_1_SELECT_BTS = './lunarush/assets/warrior_1_select_bt.PNG'
 WARRIOR_2_SELECT_BTS = './lunarush/assets/warrior_2_select_bt.PNG'
 WARRIOR_3_SELECT_BTS = './lunarush/assets/warrior_3_select_bt.PNG'
@@ -39,6 +43,9 @@ WARRIOR_6_SELECT_BTS = './lunarush/assets/warrior_6_select_bt.PNG'
 WARRIOR_7_SELECT_BTS = './lunarush/assets/warrior_7_select_bt.PNG'
 WARRIOR_8_SELECT_BTS = './lunarush/assets/warrior_8_select_bt.PNG'
 WARRIOR_9_SELECT_BTS = './lunarush/assets/warrior_9_select_bt.PNG'
+WARRIOR_10_SELECT_BTS = './lunarush/assets/warrior_10_select_bt.PNG'
+WARRIOR_11_SELECT_BTS = './lunarush/assets/warrior_11_select_bt.PNG'
+WARRIOR_12_SELECT_BTS = './lunarush/assets/warrior_12_select_bt.PNG'
 START_BOSS_BTS = './lunarush/assets/start_boss_bt.PNG'
 START_FIGTH_BTS = './lunarush/assets/start_figth_bt.PNG'
 RESULT_FIGTH_BTS = './lunarush/assets/result_figth_bt.PNG'
@@ -53,37 +60,47 @@ def launch_luna_rush(): # 2m 7s
   image_click('Hunting Boss', HUNTING_BOSS_BTS, WAIT_HUNTING_BOSS) # 12s
 
 def select_boss_level(): # 12s
-  image_click('Select Level Boss', LEVEL_BOSS_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Select Level Boss', LEVEL_BOSS_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
 
 def select_group_one(): # 36s
-  image_click('Warrior 1 Select', WARRIOR_1_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 2 Select', WARRIOR_2_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 3 Select', WARRIOR_3_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 1 Select', WARRIOR_1_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 2 Select', WARRIOR_2_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 3 Select', WARRIOR_3_BTS, WAIT_HUNTING_BOSS) # 12s
 
 def select_group_two(): # 36s
-  image_click('Warrior 4 Select', WARRIOR_4_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 5 Select', WARRIOR_5_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 6 Select', WARRIOR_6_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 4 Select', WARRIOR_4_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 5 Select', WARRIOR_5_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 6 Select', WARRIOR_6_BTS, WAIT_HUNTING_BOSS) # 12s
 
 def select_group_three(): # 36s
-  image_click('Warrior 7 Select', WARRIOR_7_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 8 Select', WARRIOR_8_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 9 Select', WARRIOR_9_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 7 Select', WARRIOR_7_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 8 Select', WARRIOR_8_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 9 Select', WARRIOR_9_BTS, WAIT_HUNTING_BOSS) # 12s
+
+def select_group_for(): # 36s
+  image_one_click('Warrior 10 Select', WARRIOR_10_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 11 Select', WARRIOR_11_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 12 Select', WARRIOR_12_BTS, WAIT_HUNTING_BOSS) # 12s
 
 def deselect_group_one(): # 36s
-  image_click('Warrior 1 Deselect', WARRIOR_1_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 2 Deselect', WARRIOR_2_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 3 Deselect', WARRIOR_3_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 1 Deselect', WARRIOR_1_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 2 Deselect', WARRIOR_2_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 3 Deselect', WARRIOR_3_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
 
 def deselect_group_two(): # 36s
-  image_click('Warrior 4 Deselect', WARRIOR_4_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 5 Deselect', WARRIOR_5_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 6 Deselect', WARRIOR_6_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 4 Deselect', WARRIOR_4_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 5 Deselect', WARRIOR_5_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 6 Deselect', WARRIOR_6_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
 
 def deselect_group_three(): # 36s
-  image_click('Warrior 7 Deselect', WARRIOR_7_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 8 Deselect', WARRIOR_8_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
-  image_click('Warrior 9 Deselect', WARRIOR_9_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 7 Deselect', WARRIOR_7_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 8 Deselect', WARRIOR_8_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 9 Deselect', WARRIOR_9_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+
+def deselect_group_for(): # 36s
+  image_one_click('Warrior 10 Deselect', WARRIOR_10_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 11 Deselect', WARRIOR_11_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Warrior 12 Deselect', WARRIOR_12_SELECT_BTS, WAIT_HUNTING_BOSS) # 12s
 
 def figth_boss(): # 1m 54s
   image_click('Start Boss', START_BOSS_BTS, WAIT_START_BOSS) # 17s
@@ -108,7 +125,7 @@ def close_luna_game(): # 13s
   pyautogui.keyUp('ctrl')
 
 def expand_tab_warriors(): # 12s
-  image_click('Expand Warriors', EXPAND_WARRIORS_BTS, WAIT_HUNTING_BOSS) # 12s
+  image_one_click('Expand Warriors', EXPAND_WARRIORS_BTS, WAIT_HUNTING_BOSS) # 12s
 
 def play_bot_luna():
   launch_luna_rush()
