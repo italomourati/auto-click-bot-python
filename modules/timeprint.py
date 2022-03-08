@@ -7,7 +7,8 @@ from colorama import init, Fore, Style
 init(convert=True)
 
 def time_print(seconds):
-  print(Fore.WHITE + Style.BRIGHT + datetime.now().strftime('%d/%m %H:%M:%S'), Fore.CYAN + Style.BRIGHT + 'WARNING: Waiting ' + str(seconds) + ' seconds')
+  dataNow = datetime.now().strftime('%d/%m %H:%M:%S')
+  print(Fore.WHITE + Style.BRIGHT + f'{dataNow}' + Fore.CYAN + Style.BRIGHT + f'WARNING: Waiting {seconds} seconds')
   time.sleep(seconds) 
 
 
