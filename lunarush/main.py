@@ -54,7 +54,7 @@ RESULT_FIGTH_VICTORY_BTS = './lunarush/assets/result_figth_victory_bt.PNG'
 ICONE_TAB_BTS = './lunarush/assets/icone_tab_bt.PNG'
 
 def launch_luna_rush(): # 2m 7s
-  image_click('Icon Luna', ICON_LUNA_BTS, WAIT_TIME_LAUNCH) #1m 1s
+  image_one_click('Icon Luna', ICON_LUNA_BTS, WAIT_TIME_LAUNCH) #1m 1s
   image_click('Connect Wallet', CONNECT_WALLET_BTS, WAIT_TIME_WALLET) # 27s
   image_click('Sign Meta Mask', SIGN_META_MASK_BTS, WAIT_TIME_WALLET) # 27s
   image_click('Hunting Boss', HUNTING_BOSS_BTS, WAIT_HUNTING_BOSS) # 12s
