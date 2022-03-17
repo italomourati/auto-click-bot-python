@@ -150,7 +150,7 @@ def main_menu():
 
     if select == 1:
       while True:
-        play_bot_bomb() # 
+        play_bot_bomb() # 22
     
     if select == 2:
       while True:
