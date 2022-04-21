@@ -17,18 +17,17 @@ def print_menu():
     print(key, '-', menu_options[key])
 
 # LUNA RUSH
-def play_luna(): # 47m 53s
+def play_luna(): # 39m 33s
   launch_luna_rush() # 2m 57s
   select_boss_level() # 17s
   expand_tab_warriors() # 17s
-  deselect_group_one() # 1m
+  deselect_group_one() # 1m to 14s
   scroll_heros(True) # 8s
   select_group_five() # 1m
   for figth in range(3): # 6m 33s
     figth_boss() 
     select_boss_level()
   expand_tab_warriors() # 17s
-  scroll_heros(True) # 8s
   deselect_group_five() # 1m
   select_group_for() # 1m
   for figth in range(3): # 6m 33s
@@ -65,12 +64,20 @@ def not_afk_bomb(loop):
     time_print(31) # 31s
 
 def stage_one(): # 1h 30m 2s
-  play_luna() # 47m 53s
+  play_luna() # 39m 33s
   connect_bomb() # 1m 45s
   play_heros() # 1m 5s
   not_afk_bomb(4) # 28m ou 22m 20s
   play_heros() # 1m 5s
   not_afk_bomb(2) # 14m ou 11m 10s
+  refresh_heros() # 22s
+  time_print(120) # 2m
+  open_and_close_trunk() # 22s
+  time_print(120) # 2m
+  refresh_heros() # 22s
+  time_print(120) # 2m
+  open_and_close_trunk() # 22s
+  time_print(120) # 2m
   refresh_heros() # 22s
   time_print(120) # 2m
   open_and_close_trunk() # 22s

@@ -26,6 +26,7 @@ EXPAND_WARRIORS_BTS = './lunarush/assets/expand_warriors_bt.PNG'
 SCROLL_HEROS_1 = './lunarush/assets/scroll_heros_1.PNG'
 SCROLL_HEROS_2 = './lunarush/assets/scroll_heros_2.PNG'
 TOPO_BT = './lunarush/assets/topo_bt.PNG'
+DELETE_ALL = './lunarush/assets/delete_all_bt.PNG'
 
 WS1 = './lunarush/assets/warriors/select/1.PNG'
 WS2 = './lunarush/assets/warriors/select/2.PNG'
@@ -190,44 +191,49 @@ def scroll_heros(mode): # 8s
     pyautogui.mouseUp(button='left')
 
 def deselect_group_one(): # 1m
-  image_one_click('Warrior 1 Deselect', WD1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 2 Deselect', WD2, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 3 Deselect', WD3, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 1 Deselect', WD1_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 2 Deselect', WD2_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 3 Deselect', WD3_1, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior Deselect', DELETE_ALL, WAIT_HUNTING_BOSS)
+  # image_one_click('Warrior 1 Deselect', WD1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 2 Deselect', WD2, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 3 Deselect', WD3, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 1 Deselect', WD1_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 2 Deselect', WD2_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 3 Deselect', WD3_1, WAIT_HUNTING_BOSS) # 12s
 
 def deselect_group_two(): # 1m
-  image_one_click('Warrior 4 Deselect', WD4, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 5 Deselect', WD5, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 6 Deselect', WD6, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 4 Deselect', WD4_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 5 Deselect', WD5_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 6 Deselect', WD6_1, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior Deselect', DELETE_ALL, WAIT_HUNTING_BOSS)
+  # image_one_click('Warrior 4 Deselect', WD4, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 5 Deselect', WD5, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 6 Deselect', WD6, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 4 Deselect', WD4_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 5 Deselect', WD5_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 6 Deselect', WD6_1, WAIT_HUNTING_BOSS) # 12s
 
 def deselect_group_three(): # 1m
-  image_one_click('Warrior 7 Deselect', WD7, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 8 Deselect', WD8, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 9 Deselect', WD9, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 7 Deselect', WD7_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 8 Deselect', WD8_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 9 Deselect', WD9_1, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior Deselect', DELETE_ALL, WAIT_HUNTING_BOSS)
+  # image_one_click('Warrior 7 Deselect', WD7, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 8 Deselect', WD8, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 9 Deselect', WD9, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 7 Deselect', WD7_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 8 Deselect', WD8_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 9 Deselect', WD9_1, WAIT_HUNTING_BOSS) # 12s
 
 def deselect_group_for(): # 1m
-  image_one_click('Warrior 10 Deselect', WD10, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 11 Deselect', WD11, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 12 Deselect', WD12, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 10 Deselect', WD10_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 11 Deselect', WD11_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 12 Deselect', WD12_1, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior Deselect', DELETE_ALL, WAIT_HUNTING_BOSS)
+  # image_one_click('Warrior 10 Deselect', WD10, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 11 Deselect', WD11, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 12 Deselect', WD12, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 10 Deselect', WD10_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 11 Deselect', WD11_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 12 Deselect', WD12_1, WAIT_HUNTING_BOSS) # 12s
 
 def deselect_group_five(): # 1m
-  image_one_click('Warrior 13 Deselect', WD13, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 14 Deselect', WD14, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 15 Deselect', WD15, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 13 Deselect', WD13_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 14 Deselect', WD14_1, WAIT_HUNTING_BOSS) # 12s
-  image_one_click('Warrior 15 Deselect', WD15_1, WAIT_HUNTING_BOSS) # 12s
+  image_click('Warrior Deselect', DELETE_ALL, WAIT_HUNTING_BOSS)
+  # image_one_click('Warrior 13 Deselect', WD13, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 14 Deselect', WD14, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 15 Deselect', WD15, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 13 Deselect', WD13_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 14 Deselect', WD14_1, WAIT_HUNTING_BOSS) # 12s
+  # image_one_click('Warrior 15 Deselect', WD15_1, WAIT_HUNTING_BOSS) # 12s
 
 def figth_boss(): # 1m 54s
   image_one_click('Start Boss 1', START_BOSS_BTS) # 7s
