@@ -19,6 +19,7 @@ CONNECT_META_MASK_BTS = './bombcrypto/assets/connect_meta_mask_bt.PNG'
 CONNECT_WALLET_BTS = './bombcrypto/assets/connect_wallet_bt.PNG'
 SIGN_META_MASK_BTS = './bombcrypto/assets/sign_meta_mask_bt.PNG'
 WRONG_NETWORK_BTS = './bombcrypto/assets/wrong_network_bt.PNG'
+LIFE_GREEN_BTS = './bombcrypto/assets/life_green_bt.PNG'
 
 def refresh_heros(): # 22s
   image_click('Back', BACK_BTS) # 11s
